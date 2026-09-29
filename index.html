@@ -1,9 +1,206 @@
-<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>SOCCA — AI Student Help Desk</title><link rel="stylesheet" href="style.css"></head><body><div class='app'><aside class='side'><div class='logo'>SOCCA<small>AI STUDENT HELP DESK</small></div><div class='section'>MAIN</div><button class='nav active' onclick='page("dashboard",this)'><span>⌂</span>Dashboard</button><button class='nav' onclick='page("chat",this)'><span>✦</span>AI Assistant</button><button class='nav' onclick='page("tickets",this)'><span>▣</span>My Tickets <i>3</i></button><div class='section'>MANAGEMENT</div><button class='nav' onclick='page("faculty",this)'><span>♧</span>Faculty Portal</button><button class='nav' onclick='page("admin",this)'><span>⚙</span>Admin Console</button><button class='nav' onclick='page("agents",this)'><span>◈</span>AI Agents</button><div class='promo'><b>Multi-Agent AI</b><br>RAG + confidence-based escalation + human approval.<button onclick='page("chat",document.querySelectorAll(".nav")[1])'>Ask AI →</button></div><div class='user'><span class='avatar'>RV</span><b>Ronil V.</b><br><small>Student</small></div></aside><main class='main'><header><div class='search'>⌕ <input placeholder='Search knowledge base...'></div><div class='icons'><button class='icon'>♧</button><button class='icon'>☼</button><span class='mini'>RV</span></div></header>
-<section id='dashboard' class='page active'><div class='hero'><div><div class='eyebrow'>GOOD MORNING, RONIL 👋</div><h1>How can we help you today?</h1><p>Ask SOCCA anything about your college services.</p></div><button onclick='page("chat",document.querySelectorAll(".nav")[1])'>Start a conversation →</button></div><div class='stats'><div class='stat'><small>AI QUERIES</small><strong>128</strong><label>↑ 18% this week</label></div><div class='stat'><small>OPEN TICKETS</small><strong>08</strong><label>3 need your reply</label></div><div class='stat'><small>AI RESOLUTION</small><strong>94%</strong><label>Verified responses</label></div><div class='stat'><small>AVG RESPONSE</small><strong>2.4s</strong><label>AI powered</label></div></div><div class='grid'><div class='card'><h2>Recent activity</h2><p class='muted'>Your latest help desk interactions</p><div class='row'><span class='qicon'>✦</span><div class='grow'><b>Exam schedule inquiry</b><small>AI Assistant • Today, 10:42 AM</small></div><span class='pill'>Resolved</span></div><div class='row'><span class='qicon'>▣</span><div class='grow'><b>Scholarship document issue</b><small>Ticket #SO-1024 • Today, 9:18 AM</small></div><span class='pill open'>Open</span></div><div class='row'><span class='qicon'>▤</span><div class='grow'><b>Bonafide certificate</b><small>Student Services • Yesterday</small></div><span class='pill'>Resolved</span></div></div><div class='card quick'><h2>Quick actions</h2><p class='muted'>Get things done faster</p><button onclick='page("chat",document.querySelectorAll(".nav")[1])'><span class='qicon'>✦</span><div><b>Ask AI Assistant</b><small>Get an instant answer</small></div>→</button><button onclick='page("tickets",document.querySelectorAll(".nav")[2])'><span class='qicon'>▣</span><div><b>Track a ticket</b><small>Check ticket status</small></div>→</button><button onclick='page("faculty",document.querySelectorAll(".nav")[3])'><span class='qicon'>♧</span><div><b>Contact faculty</b><small>Connect with a department</small></div>→</button></div></div></section>
-<section id='chat' class='page'><div class='chat'><div class='card'><div class='chatHead'><div class='bot'>✦</div><div><h2>SOCCA Assistant</h2><small>🟢 Online • RAG knowledge base connected</small></div></div><div id='messages' class='messages'><div class='bubble botMsg'><b>SOCCA</b><br>Hi Ronil! 👋 Ask me about exams, fees, admissions, certificates, placements, library or other college services.</div></div><div class='chips'><button onclick="ask('When will Semester 7 examinations begin?')">📅 Exam dates</button><button onclick="ask('How can I apply for a bonafide certificate?')">📄 Certificate</button><button onclick="ask('What is the fee payment procedure?')">💳 Fees</button></div><div class='compose'><input id='q' placeholder='Ask your question...' onkeydown="if(event.key==='Enter')send()"><button onclick='send()'>Send ✦</button></div></div><div class='card'><h2>AI Processing</h2><p class='muted'>Live request pipeline</p><div class='step'><span class='circle done'>✓</span><div><b>Intent Recognition</b><small>Identify user intent</small></div></div><div class='step'><span class='circle done'>✓</span><div><b>Knowledge Retrieval</b><small>Search verified sources</small></div></div><div class='step'><span class='circle'>3</span><div><b>Decision Agent</b><small>Check confidence</small></div></div><div class='step'><span class='circle'>4</span><div><b>Ticket Escalation</b><small>Only when needed</small></div></div></div></div></section>
-<section id='tickets' class='page'><div class='pageTitle'><div class='eyebrow'>SUPPORT</div><h1>My Tickets</h1><p>Track questions that need human assistance.</p></div><div class='card'><table class='table'><tr><th>TICKET</th><th>SUBJECT</th><th>DEPARTMENT</th><th>UPDATED</th><th>STATUS</th></tr><tr><td>#SO-1024</td><td><b>Scholarship document issue</b><small>Document verification</small></td><td>Student Services</td><td>Today</td><td><span class='pill open'>Open</span></td></tr><tr><td>#SO-1021</td><td><b>Exam form correction</b><small>Semester 7</small></td><td>Examination</td><td>Yesterday</td><td><span class='pill'>Faculty review</span></td></tr><tr><td>#SO-1017</td><td><b>Library renewal</b><small>Membership</small></td><td>Library</td><td>Sep 27</td><td><span class='pill'>Resolved</span></td></tr></table></div></section>
-<section id='faculty' class='page'><div class='pageTitle'><div class='eyebrow'>FACULTY</div><h1>Faculty Portal</h1><p>Review escalated student queries.</p></div><div class='stats'><div class='stat'><small>PENDING</small><strong>08</strong></div><div class='stat'><small>RESOLVED TODAY</small><strong>17</strong></div><div class='stat'><small>AVG RESPONSE</small><strong>3.8h</strong></div></div><div class='card'><table class='table'><tr><th>TICKET</th><th>STUDENT QUERY</th><th>ROUTE</th><th>ACTION</th></tr><tr><td>#SO-1024</td><td>Scholarship document issue</td><td>Student Services</td><td><button class='primary'>Respond</button></td></tr><tr><td>#SO-1021</td><td>Exam form correction</td><td>Examination Cell</td><td><button class='primary'>Respond</button></td></tr></table></div></section>
-<section id='admin' class='page'><div class='pageTitle'><div class='eyebrow'>ADMINISTRATION</div><h1>Admin Console</h1><p>Monitor AI, knowledge and system operations.</p></div><div class='stats'><div class='stat'><small>KNOWLEDGE ARTICLES</small><strong>342</strong><label>Verified</label></div><div class='stat'><small>AI CONFIDENCE</small><strong>94%</strong><label>Average</label></div><div class='stat'><small>SYSTEM HEALTH</small><strong>99.9%</strong><label>Operational</label></div></div></section>
-<section id='agents' class='page'><div class='pageTitle'><div class='eyebrow'>MULTI-AGENT AI</div><h1>AI Agent Network</h1><p>Specialized agents collaborate to resolve student requests.</p></div><div class='agentGrid'>
-<div class='agent'><span class='num'>01</span><h3>Intent Agent</h3><p>Understands what the student is asking.</p><b>● Active</b></div><div class='agent'><span class='num'>02</span><h3>Entity Agent</h3><p>Extracts semester, dates and departments.</p><b>● Active</b></div><div class='agent'><span class='num'>03</span><h3>Retrieval Agent</h3><p>Searches the verified knowledge base.</p><b>● Active</b></div><div class='agent'><span class='num'>04</span><h3>Decision Agent</h3><p>Checks confidence and chooses escalation.</p><b>● Active</b></div><div class='agent'><span class='num'>05</span><h3>Ticket Agent</h3><p>Creates and tracks unresolved queries.</p><b>● Active</b></div><div class='agent'><span class='num'>06</span><h3>Routing Agent</h3><p>Routes tickets to the right department.</p><b>● Active</b></div><div class='agent'><span class='num'>07</span><h3>Notification Agent</h3><p>Sends student and faculty notifications.</p><b>● Active</b></div><div class='agent'><span class='num'>08</span><h3>Learning Agent</h3><p>Uses verified faculty responses for KB updates.</p><b>● Human approval</b></div></div></section></main></div>
-<script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SOCCA — Cloud-Based Multi-Agent AI Student Help Desk</title>
+  <meta name="description" content="SOCCA prototype for Assignment-2: Cloud-Based Multi-Agent AI Student Help Desk System" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="toast" id="toast"></div>
+  <div class="modal hidden" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel" id="modalPanel"></div>
+  </div>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div><strong>SOCCA</strong><span>AI STUDENT HELP DESK</span></div>
+      </div>
+      <div class="prototype-chip"><span class="status-dot"></span> Prototype / Demo Mode</div>
+
+      <div class="nav-section">WORKSPACE</div>
+      <button class="nav-item active" data-page="dashboard"><span class="icon">⌂</span><span>Dashboard</span></button>
+      <button class="nav-item" data-page="assistant"><span class="icon">✦</span><span>AI Assistant</span></button>
+      <button class="nav-item" data-page="tickets"><span class="icon">▣</span><span>My Tickets</span><span class="badge">3</span></button>
+      <button class="nav-item" data-page="faculty"><span class="icon">♧</span><span>Faculty Portal</span></button>
+      <button class="nav-item" data-page="admin"><span class="icon">⚙</span><span>Admin Console</span></button>
+
+      <div class="nav-section">SYSTEM DESIGN</div>
+      <button class="nav-item" data-page="agents"><span class="icon">◈</span><span>AI Agent Network</span></button>
+      <button class="nav-item" data-page="knowledge"><span class="icon">⌁</span><span>Knowledge & Intents</span></button>
+      <button class="nav-item" data-page="architecture"><span class="icon">⌘</span><span>Architecture</span></button>
+      <button class="nav-item" data-page="analytics"><span class="icon">◒</span><span>Analytics</span></button>
+      <button class="nav-item" data-page="ethics"><span class="icon">◉</span><span>Ethical AI</span></button>
+      <button class="nav-item" data-page="login"><span class="icon">↪</span><span>Demo Login</span></button>
+
+      <div class="side-bottom">
+        <div class="side-help"><div class="mini-orb">✦</div><div><b>Multi-Agent Routing</b><small>Intent → Retrieval → Decision → Escalation</small></div></div>
+        <div class="user-card"><div class="avatar">RV</div><div><b>Ronil Vanzara</b><small>Student account</small></div><button class="ghost-icon" title="Account">⋯</button></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+        <div class="search"><span>⌕</span><input id="globalSearch" placeholder="Search tickets, intents, knowledge..." /></div>
+        <div class="top-actions">
+          <button class="top-icon" id="darkToggle" title="Toggle theme">☼</button>
+          <button class="top-icon" id="notifyBtn" title="Notifications">♧<span class="notif-dot"></span></button>
+          <div class="top-profile"><div class="avatar sm">RV</div><div><b>Ronil</b><small>Student</small></div></div>
+        </div>
+      </header>
+
+      <section class="page active" id="page-dashboard">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">SOCCA • STUDENT COMMAND CENTER</span>
+            <h1>How can we help you today?</h1>
+            <p>Ask about admissions, examinations, fees, placements, scholarships, certificates and more.</p>
+            <div class="hero-actions"><button class="btn light" data-go="assistant">Ask SOCCA AI <span>↗</span></button><button class="btn glass" data-go="tickets">Track a ticket</button></div>
+          </div>
+          <div class="hero-orbit"><div class="orbit-ring r1"></div><div class="orbit-ring r2"></div><div class="core">✦<small>SOCCA</small></div><span class="node n1">RAG</span><span class="node n2">AI</span><span class="node n3">KB</span><span class="node n4">HUMAN</span></div>
+        </div>
+
+        <div class="stat-grid">
+          <article class="stat-card"><div class="stat-top"><span>AI QUERIES</span><span class="trend up">+18%</span></div><strong>1,284</strong><small>Across 15 supported intents</small><div class="spark"><i style="height:25%"></i><i style="height:46%"></i><i style="height:34%"></i><i style="height:66%"></i><i style="height:58%"></i><i style="height:80%"></i><i style="height:72%"></i><i style="height:94%"></i></div></article>
+          <article class="stat-card"><div class="stat-top"><span>OPEN TICKETS</span><span class="trend neutral">3</span></div><strong>08</strong><small>2 high-priority • 6 normal</small><div class="progress"><span style="width:62%"></span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>AI RESOLUTION</span><span class="trend up">+4.2%</span></div><strong>94.8%</strong><small>Prototype metric • verified responses</small><div class="progress"><span style="width:94.8%"></span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>AVG RESPONSE</span><span class="trend up">-0.7s</span></div><strong>2.4s</strong><small>Simulated orchestration latency</small><div class="latency"><span></span><span></span><span></span><span></span><span></span></div></article>
+        </div>
+
+        <div class="content-grid two-one">
+          <article class="panel">
+            <div class="panel-head"><div><h2>Recent activity</h2><p>Latest student support interactions</p></div><button class="link-btn" data-go="tickets">View all ↗</button></div>
+            <div class="activity-list">
+              <div class="activity"><div class="activity-icon ai">✦</div><div class="activity-main"><b>Exam schedule inquiry</b><small>Examination Agent • Just now</small></div><span class="status success">Resolved</span></div>
+              <div class="activity"><div class="activity-icon ticket">▣</div><div class="activity-main"><b>Scholarship document issue</b><small>Ticket #SOC-1024 • 18 min ago</small></div><span class="status warning">Open</span></div>
+              <div class="activity"><div class="activity-icon service">⌁</div><div class="activity-main"><b>Bonafide certificate procedure</b><small>Student Services Agent • Yesterday</small></div><span class="status success">Resolved</span></div>
+              <div class="activity"><div class="activity-icon fee">₹</div><div class="activity-main"><b>Fee payment deadline</b><small>Fees Agent • Yesterday</small></div><span class="status success">Resolved</span></div>
+            </div>
+          </article>
+          <article class="panel quick-panel">
+            <div class="panel-head"><div><h2>Quick actions</h2><p>Most-used student workflows</p></div></div>
+            <button class="quick-action" data-go="assistant"><span class="qa-icon">✦</span><div><b>Ask AI Assistant</b><small>Natural-language help</small></div><span>→</span></button>
+            <button class="quick-action" data-go="tickets"><span class="qa-icon">▣</span><div><b>Track a ticket</b><small>Check status or faculty replies</small></div><span>→</span></button>
+            <button class="quick-action" data-go="knowledge"><span class="qa-icon">⌁</span><div><b>Explore intents</b><small>See supported student queries</small></div><span>→</span></button>
+          </article>
+        </div>
+
+        <div class="content-grid two-one">
+          <article class="panel">
+            <div class="panel-head"><div><h2>Support coverage</h2><p>Prototype coverage across the assignment's 15 required intents</p></div><span class="small-chip">15 intents • 30 queries</span></div>
+            <div class="coverage-grid" id="coverageGrid"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-head"><div><h2>System status</h2><p>Prototype modules</p></div></div>
+            <div class="status-stack"><div><span class="status success">Operational</span><b>Student Portal</b><small>Responsive UI</small></div><div><span class="status success">Ready</span><b>AI Orchestrator</b><small>Rule-based prototype flow</small></div><div><span class="status info">Demo</span><b>Knowledge Base</b><small>Mock institutional content</small></div><div><span class="status warning">Simulated</span><b>Email Notifications</b><small>UI workflow only</small></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page" id="page-assistant">
+        <div class="page-heading"><div><span class="eyebrow">NATURAL LANGUAGE SUPPORT</span><h1>AI Student Assistant</h1><p>Interactive demo of intent recognition, entity extraction, retrieval, confidence and escalation.</p></div><span class="mode-chip">● Prototype AI Flow</span></div>
+        <div class="assistant-layout">
+          <article class="panel chat-panel">
+            <div class="chat-top"><div class="bot-avatar">✦</div><div><h2>SOCCA Assistant</h2><small><span class="live-dot"></span> Demo online • Knowledge base simulation</small></div><button class="ghost-btn" id="clearChat">Clear</button></div>
+            <div class="messages" id="messages"></div>
+            <div class="suggestions" id="suggestions"></div>
+            <div class="composer"><textarea id="chatInput" rows="1" placeholder="Ask: How can I apply for a bonafide certificate?"></textarea><button class="send-btn" id="sendChat">Send ✦</button></div>
+            <div class="composer-note">Prototype note: responses are mapped to a demo knowledge base. Production design maps retrieval to RAG + institutional documents.</div>
+          </article>
+          <aside class="panel pipeline-panel">
+            <div class="panel-head"><div><h2>AI processing</h2><p>Current request pipeline</p></div></div>
+            <div class="pipeline" id="pipeline">
+              <div class="pipe-step active"><span>01</span><div><b>Text preprocessing</b><small>Normalize & clean input</small></div></div>
+              <div class="pipe-step"><span>02</span><div><b>Intent recognition</b><small>Classify the student's goal</small></div></div>
+              <div class="pipe-step"><span>03</span><div><b>Entity extraction</b><small>Semester, date, department</small></div></div>
+              <div class="pipe-step"><span>04</span><div><b>Semantic retrieval</b><small>Find verified knowledge</small></div></div>
+              <div class="pipe-step"><span>05</span><div><b>Confidence decision</b><small>Answer or escalate</small></div></div>
+            </div>
+            <div class="result-box" id="resultBox"><span class="eyebrow">LAST ANALYSIS</span><h3>Ask a question to inspect the pipeline.</h3><p>Intent, entities and confidence will appear here.</p></div>
+          </aside>
+        </div>
+        <div class="content-grid two-one mt">
+          <article class="panel"><div class="panel-head"><div><h2>Suggested questions</h2><p>Use these to demonstrate the 15-intent routing</p></div></div><div class="suggestion-grid" id="suggestionGrid"></div></article>
+          <article class="panel"><div class="panel-head"><div><h2>Escalation policy</h2><p>Low-confidence questions go to human support</p></div></div><div class="policy-card"><div class="policy-rule"><b>Confidence ≥ 0.80</b><span class="status success">Answer</span></div><p>Return a verified response from the knowledge base.</p><div class="policy-rule"><b>Confidence &lt; 0.80</b><span class="status warning">Create ticket</span></div><p>Generate Ticket ID → route department → faculty reply → student notification → admin approval → knowledge update.</p></div></article>
+        </div>
+      </section>
+
+      <section class="page" id="page-tickets">
+        <div class="page-heading"><div><span class="eyebrow">HUMAN SUPPORT</span><h1>My Tickets</h1><p>Track escalated questions, faculty replies and resolution state.</p></div><button class="btn primary" id="newTicketBtn">+ New Ticket</button></div>
+        <div class="ticket-summary"><div class="mini-stat"><span>OPEN</span><b>3</b></div><div class="mini-stat"><span>FACULTY REVIEW</span><b>2</b></div><div class="mini-stat"><span>RESOLVED</span><b>14</b></div><div class="mini-stat"><span>AVG RESPONSE</span><b>3.8h</b></div></div>
+        <article class="panel table-panel"><div class="table-tools"><div class="tabs" id="ticketTabs"><button class="active" data-filter="all">All</button><button data-filter="open">Open</button><button data-filter="review">Faculty Review</button><button data-filter="resolved">Resolved</button></div><input class="table-search" id="ticketSearch" placeholder="Search tickets..." /></div><div class="table-wrap"><table><thead><tr><th>TICKET</th><th>SUBJECT</th><th>DEPARTMENT</th><th>PRIORITY</th><th>UPDATED</th><th>STATUS</th><th></th></tr></thead><tbody id="ticketBody"></tbody></table></div></article>
+        <div class="content-grid two-one mt"><article class="panel"><div class="panel-head"><div><h2>Escalation journey</h2><p>Exact flow from the assignment</p></div></div><div class="journey"><div><span>1</span><b>Student query</b><small>AI cannot confidently answer</small></div><i>→</i><div><span>2</span><b>Create Ticket ID</b><small>Store query & entities</small></div><i>→</i><div><span>3</span><b>Faculty routing</b><small>Department selected</small></div><i>→</i><div><span>4</span><b>Faculty reply</b><small>Student is notified</small></div><i>→</i><div><span>5</span><b>KB update</b><small>Admin approval required</small></div></div></article><article class="panel"><div class="panel-head"><div><h2>Notification center</h2><p>Demo events</p></div></div><div class="notification-list"><div><span>✉</span><b>Faculty notified</b><small>Ticket #SOC-1024 routed to Student Services</small></div><div><span>✓</span><b>Student notified</b><small>Faculty reply is ready to view</small></div><div><span>⌁</span><b>Knowledge update pending</b><small>Admin approval required before publishing</small></div></div></article></div>
+      </section>
+
+      <section class="page" id="page-faculty">
+        <div class="page-heading"><div><span class="eyebrow">FACULTY PORTAL</span><h1>Faculty Support Desk</h1><p>Review routed student queries, respond, and mark verified knowledge.</p></div><span class="small-chip">Department: Student Services</span></div>
+        <div class="stat-grid three"><article class="stat-card"><div class="stat-top"><span>PENDING</span><span class="trend warning">8</span></div><strong>08</strong><small>Across 5 departments</small></article><article class="stat-card"><div class="stat-top"><span>RESOLVED TODAY</span><span class="trend up">+6</span></div><strong>17</strong><small>Average response 3.8h</small></article><article class="stat-card"><div class="stat-top"><span>KB CANDIDATES</span><span class="trend neutral">5</span></div><strong>05</strong><small>Need admin approval</small></article></div>
+        <div class="content-grid two-one mt"><article class="panel table-panel"><div class="panel-head"><div><h2>Routed student queries</h2><p>Respond to escalated questions</p></div></div><div class="table-wrap"><table><thead><tr><th>TICKET</th><th>QUERY</th><th>ROUTE</th><th>PRIORITY</th><th></th></tr></thead><tbody id="facultyBody"></tbody></table></div></article><article class="panel"><div class="panel-head"><div><h2>Faculty workflow</h2><p>Human-in-the-loop design</p></div></div><div class="workflow-list"><div class="wf active"><span>01</span><b>Review ticket</b><small>Read query + extracted entities</small></div><div class="wf"><span>02</span><b>Reply to student</b><small>Provide verified institutional guidance</small></div><div class="wf"><span>03</span><b>Suggest KB update</b><small>Send verified answer for approval</small></div><div class="wf"><span>04</span><b>Notify student</b><small>Email notification in production</small></div></div></article></div>
+      </section>
+
+      <section class="page" id="page-admin">
+        <div class="page-heading"><div><span class="eyebrow">ADMINISTRATION</span><h1>Admin Console</h1><p>Approve knowledge updates, monitor agent operations and review system activity.</p></div><span class="mode-chip">Protected workspace • Demo</span></div>
+        <div class="admin-grid">
+          <article class="admin-card"><div class="admin-icon">⌁</div><div><span>KNOWLEDGE BASE</span><strong>342</strong><small>Verified articles</small></div><button class="link-btn" data-go="knowledge">Manage →</button></article>
+          <article class="admin-card"><div class="admin-icon">◈</div><div><span>AI AGENTS</span><strong>8</strong><small>Specialized roles</small></div><button class="link-btn" data-go="agents">Inspect →</button></article>
+          <article class="admin-card"><div class="admin-icon">▣</div><div><span>TICKETS</span><strong>1,024</strong><small>Historical prototype records</small></div><button class="link-btn" data-go="tickets">Review →</button></article>
+          <article class="admin-card"><div class="admin-icon">◉</div><div><span>SYSTEM HEALTH</span><strong>99.9%</strong><small>Target architecture metric</small></div><button class="link-btn" data-go="analytics">View →</button></article>
+        </div>
+        <div class="content-grid one-one mt"><article class="panel"><div class="panel-head"><div><h2>Pending knowledge approvals</h2><p>Faculty replies become KB content only after approval.</p></div><span class="small-chip">5 pending</span></div><div class="approval-list" id="approvalList"></div></article><article class="panel"><div class="panel-head"><div><h2>Role-based access</h2><p>Maps to Cognito + IAM in AWS production.</p></div></div><div class="role-list"><div><span class="role student">ST</span><div><b>Student</b><small>Ask AI • create ticket • view own tickets</small></div></div><div><span class="role faculty">FA</span><div><b>Faculty</b><small>Review assigned tickets • reply • suggest KB updates</small></div></div><div><span class="role admin">AD</span><div><b>Admin</b><small>Approve KB • manage users • monitor agents</small></div></div></div></article></div>
+      </section>
+
+      <section class="page" id="page-agents">
+        <div class="page-heading"><div><span class="eyebrow">MULTI-AGENT SYSTEM</span><h1>AI Agent Network</h1><p>Eight cooperating agent responsibilities from the assignment design.</p></div><span class="small-chip">8 agents • Human oversight</span></div>
+        <div class="agent-canvas"><div class="flow-node student-node"><span>Student</span><small>Natural language query</small></div><div class="flow-line l1"></div><div class="flow-node orch-node"><span>Orchestrator</span><small>Route task to agents</small></div><div class="flow-line l2"></div><div class="agent-bubbles"><span>Intent</span><span>Entity</span><span>Retrieval</span><span>Decision</span><span>Ticket</span><span>Routing</span><span>Notification</span><span>Learning</span></div><div class="flow-line l3"></div><div class="flow-node kb-node"><span>Knowledge Base</span><small>Verified institutional content</small></div></div>
+        <div class="agent-grid" id="agentGrid"></div>
+      </section>
+
+      <section class="page" id="page-knowledge">
+        <div class="page-heading"><div><span class="eyebrow">KNOWLEDGE LAYER</span><h1>Knowledge Base & 15 Intents</h1><p>Two sample queries per intent satisfy the 30-query prototype requirement; production would use institutional documents for RAG.</p></div><button class="btn secondary" id="kbInfoBtn">How RAG works</button></div>
+        <article class="panel table-panel"><div class="table-tools"><div class="tabs active-styled"><span class="tab-title">15 Intent Catalog</span></div><input class="table-search" id="intentSearch" placeholder="Search intent or query..." /></div><div class="table-wrap"><table><thead><tr><th>INTENT</th><th>SAMPLE QUERIES</th><th>AI RESPONSE</th><th>CONF.</th><th>ENTITIES</th></tr></thead><tbody id="intentBody"></tbody></table></div></article>
+      </section>
+
+      <section class="page" id="page-architecture">
+        <div class="page-heading"><div><span class="eyebrow">CLOUD DESIGN</span><h1>System Architecture</h1><p>Assignment-aligned architecture with a working static prototype and production AWS mapping.</p></div><span class="small-chip">AWS production reference</span></div>
+        <div class="architecture-board">
+          <div class="arch-row"><div class="arch-card front"><span>Student Portal</span><small>Login • Dashboard • Chat • Tickets</small></div><span class="arrow">→</span><div class="arch-card ai"><span>AI Chatbot</span><small>NLP • intent • entities</small></div><span class="arrow">→</span><div class="arch-card multi"><span>Multi-Agent System</span><small>8 specialized agents</small></div><span class="arrow">→</span><div class="arch-card kb"><span>Knowledge Base / RAG</span><small>Verified institutional content</small></div></div>
+          <div class="arch-branches"><div class="branch"><div class="branch-title">High confidence</div><span>Decision Agent</span><i>→</i><span class="answer">Verified answer</span></div><div class="branch low"><div class="branch-title">Low confidence</div><span>Ticket Agent</span><i>→</i><span>Faculty Routing</span><i>→</i><span>Email Notification</span><i>→</i><span>Faculty Reply</span><i>→</i><span>Student Notification</span><i>→</i><span>Admin Approval</span><i>→</i><span>KB Update</span></div></div>
+          <div class="aws-grid"><div class="aws"><b>Amazon EC2</b><small>Backend hosting</small></div><div class="aws"><b>Amazon S3</b><small>Document storage</small></div><div class="aws"><b>Amazon RDS</b><small>Database</small></div><div class="aws"><b>Amazon Cognito</b><small>Authentication</small></div><div class="aws"><b>Amazon IAM</b><small>Access management</small></div><div class="aws"><b>Amazon CloudWatch</b><small>Monitoring</small></div></div>
+          <div class="prototype-note"><b>Implementation boundary:</b> this GitHub Pages package is a frontend prototype. AWS services above are the production architecture mapping required by Task 6; no claim is made that this static site currently connects to EC2/RDS/Cognito/S3.</div>
+        </div>
+        <div class="content-grid one-one mt"><article class="panel"><div class="panel-head"><div><h2>Database design</h2><p>Tables requested in Task 5</p></div></div><div class="er-diagram"><svg class="er-lines" viewBox="0 0 600 360" preserveAspectRatio="none" aria-hidden="true"><line x1="120" y1="42" x2="300" y2="118"/><line x1="480" y1="42" x2="300" y2="118"/><line x1="300" y1="150" x2="120" y2="224"/><line x1="300" y1="150" x2="300" y2="224"/><line x1="300" y1="150" x2="480" y2="224"/><line x1="120" y1="254" x2="300" y2="312"/><line x1="480" y1="254" x2="300" y2="312"/><line x1="120" y1="224" x2="120" y2="254"/></svg><div class="er-table t1"><b>Students</b><span>student_id • name • email • dept_id</span></div><div class="er-table t2"><b>Faculty</b><span>faculty_id • name • dept_id</span></div><div class="er-table t3"><b>Departments</b><span>dept_id • name</span></div><div class="er-table t4"><b>Tickets</b><span>ticket_id • student_id • faculty_id • status • priority</span></div><div class="er-table t5"><b>Chat_History</b><span>chat_id • student_id • intent • query • response</span></div><div class="er-table t6"><b>Knowledge_Base</b><span>kb_id • intent • content • verified_by • status</span></div><div class="er-table t7"><b>Notifications</b><span>notification_id • ticket_id • recipient • type</span></div></div></article><article class="panel"><div class="panel-head"><div><h2>NLP pipeline</h2><p>Assignment Task 4</p></div></div><div class="nlp-flow"><div>Text<br><small>raw query</small></div><i>→</i><div>Preprocess<br><small>normalize</small></div><i>→</i><div>Intent<br><small>classification</small></div><i>→</i><div>Entities<br><small>semester/date</small></div><i>→</i><div>Semantic Search<br><small>retrieve</small></div><i>→</i><div>RAG<br><small>ground answer</small></div><i>→</i><div>Confidence<br><small>answer/escalate</small></div></div></article></div>
+      </section>
+
+      <section class="page" id="page-analytics">
+        <div class="page-heading"><div><span class="eyebrow">OPERATIONS</span><h1>Analytics & Monitoring</h1><p>Prototype dashboard for query volume, intent mix and agent workload.</p></div><span class="small-chip">Demo data</span></div>
+        <div class="content-grid one-two"><article class="panel chart-panel"><div class="panel-head"><div><h2>Weekly query volume</h2><p>Illustrative prototype values</p></div></div><div class="bar-chart" id="queryChart"></div></article><article class="panel"><div class="panel-head"><div><h2>Intent distribution</h2><p>Current prototype dataset</p></div></div><div class="donut-wrap"><div class="donut"><div><b>1,284</b><small>queries</small></div></div><div class="legend"><span><i></i>Examination 22%</span><span><i></i>Fees 14%</span><span><i></i>Certificates 11%</span><span><i></i>Admissions 10%</span><span><i></i>Other 43%</span></div></div></article></div>
+        <div class="content-grid two-one mt"><article class="panel"><div class="panel-head"><div><h2>Agent workload</h2><p>Relative routing volume</p></div></div><div class="workload" id="workload"></div></article><article class="panel"><div class="panel-head"><div><h2>Monitoring map</h2><p>AWS production observability</p></div></div><div class="monitor-list"><div><span class="status success">99.9%</span><b>Availability target</b><small>CloudWatch</small></div><div><span class="status info">P95</span><b>Latency metric</b><small>API + agent orchestration</small></div><div><span class="status warning">Alerts</span><b>Escalation spikes</b><small>Operational thresholding</small></div><div><span class="status success">Audit</span><b>Role-based actions</b><small>IAM + application logs</small></div></div></article></div>
+      </section>
+
+      <section class="page" id="page-ethics">
+        <div class="page-heading"><div><span class="eyebrow">RESPONSIBLE AI</span><h1>Ethical AI & Trust</h1><p>Task 10 coverage for data privacy, bias, transparency, security, oversight, responsible AI and consent.</p></div><span class="small-chip">Human oversight built in</span></div>
+        <div class="ethics-grid" id="ethicsGrid"></div>
+      </section>
+
+      <section class="page" id="page-login">
+        <div class="login-screen">
+          <div class="login-visual"><div class="login-brand"><div class="brand-mark">S</div><span>SOCCA</span></div><span class="eyebrow">CLOUD-BASED MULTI-AGENT AI</span><h1>Student support,<br><em>without the waiting.</em></h1><p>Prototype portal for intelligent college inquiries, automated escalation and human-approved knowledge updates.</p><div class="login-flow"><span>Student</span><i>→</i><span>AI Orchestrator</span><i>→</i><span>Knowledge / Faculty</span></div></div>
+          <div class="login-card panel"><div class="login-logo">✦</div><span class="eyebrow">WELCOME TO SOCCA</span><h2>Sign in to your portal</h2><p>Use a demo role to explore the prototype. No real credentials are collected.</p><div class="role-select" id="roleSelect"><button class="active" data-role="Student"><span>ST</span><div><b>Student</b><small>Ask AI • tickets • notifications</small></div><em>✓</em></button><button data-role="Faculty"><span>FA</span><div><b>Faculty</b><small>Review tickets • reply • KB suggestions</small></div><em>✓</em></button><button data-role="Admin"><span>AD</span><div><b>Admin</b><small>Approve KB • monitor system</small></div><em>✓</em></button></div><button class="btn primary wide" id="demoLogin">Continue as Student ↗</button><small class="login-note">Demo mode • Authentication maps to Amazon Cognito in production.</small></div>
+        </div>
+      </section>
+
+      <footer class="footer">SOCCA • Cloud-Based Multi-Agent AI Student Help Desk • Assignment-2 Prototype • Static deployment demo</footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
