@@ -14,3 +14,6 @@
 - [ ] Open Architecture and explain AWS production mapping
 - [ ] Open SOU Resources to show official university source links
 - [ ] Open Analytics / Ethical AI before submission
+
+- [x] Grounded demo answer cards for exam timetable, fees, bonafide and scholarship
+- [x] Official Silver Oak links for timetable, student portal, exam/services and scholarship policy

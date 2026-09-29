@@ -1,4 +1,4 @@
-SOCCA V3 — GitHub Pages package
+SOCCA V4 — GitHub Pages package
 
 FILES
 1. index.html — main single-page application
@@ -22,3 +22,6 @@ https://studentportal.silveroakuni.ac.in/UMSStudents/login.aspx
 https://silveroakuni.ac.in/frequently-asked-questions
 https://silveroakuni.ac.in/upload/pdf/SOU_Scholarship_Policy.pdf
 https://silveroakuni.ac.in/exam-timetable/archive
+
+
+V4 grounded demo answers added for exam timetable, fee payment, bonafide certificate and scholarship document queries. Some operational details are project-provided guidance and should be re-verified before real deployment.
