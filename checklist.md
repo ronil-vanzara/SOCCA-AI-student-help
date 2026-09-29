@@ -1,17 +1,16 @@
-# SOCCA V2 — Assignment-2 Coverage Checklist
+# SOCCA V3 demo checklist
 
-| Task | Requirement | Prototype coverage |
-|---|---|---|
-| 1 | Requirement analysis | Dashboard + coverage and support domain |
-| 2 | System architecture | Architecture page: portal, chatbot, multi-agent, DB, cloud, faculty, email, admin, KB |
-| 3 | At least 6 AI agents | 8 agents: Intent, Entity, Retrieval, Decision, Ticket, Routing, Notification, Learning |
-| 4 | NLP design | Assistant pipeline: preprocessing, intent, entities, semantic retrieval, RAG, confidence |
-| 5 | Database + ER | Architecture page shows Students, Faculty, Departments, Tickets, Chat_History, Knowledge_Base, Notifications |
-| 6 | AWS cloud | EC2, S3, RDS, Cognito, IAM, CloudWatch with production mapping note |
-| 7 | 15 intents + 30 queries | Knowledge page: 15 intents × 2 sample queries |
-| 8 | Chatbot flow | Ticket journey + assistant confidence/escalation path |
-| 9 | UI prototype | Login role reference + Login, Dashboard, Chat, Tickets, Faculty, Admin, plus Agents/Knowledge/Architecture/Analytics/Ethics |
-| 10 | Ethical AI | 7 dedicated cards: privacy, bias, transparency, security, oversight, responsible AI, consent |
-
-## Important distinction
-GitHub Pages hosts the frontend prototype. Production deployment would connect the UI to an API/backend, model service, RAG/semantic retrieval layer, database, authentication, notifications and monitoring.
+- [ ] Upload all 6 files to GitHub repository root
+- [ ] Replace old index.html/style.css/script.js/SOCCA-Preview.html
+- [ ] Keep README-FIRST.txt and checklist.md
+- [ ] GitHub Pages: main branch + /(root)
+- [ ] Open live site and hard-refresh
+- [ ] Test Dashboard
+- [ ] Test AI Assistant with exam / fee / bonafide questions
+- [ ] Test unknown question and show escalation trace
+- [ ] Open My Tickets and View a ticket
+- [ ] Create a demo ticket
+- [ ] Open Agent Network and explain orchestrator → specialist agents
+- [ ] Open Architecture and explain AWS production mapping
+- [ ] Open SOU Resources to show official university source links
+- [ ] Open Analytics / Ethical AI before submission
